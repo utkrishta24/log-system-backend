@@ -9,15 +9,14 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 
-dotenv.config({
-  path: "./.env",
-});
-
 mongoose
-  .connect(`${process.env.MONGODB_URI}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://krishsinha2406:jmkU1wfBQcMY9Z8t@cluster0.rv12yc1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("Connected to MongoDB");
   })
